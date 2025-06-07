@@ -15,7 +15,10 @@ def get_list_element_or_default(data_list: list, index: int, default_value=None)
     Learning Outcomes: Basic data structures (lists), Functions, Problem-solving (handling edge cases).
     """
     # TODO: Implement this function
-    pass
+    try:
+        return data_list[index]
+    except IndexError:
+        return default_value
 
 
 def count_value_occurrences(data_list:list, value_to_count: any)-> int:
@@ -32,7 +35,12 @@ def count_value_occurrences(data_list:list, value_to_count: any)-> int:
     Learning Outcomes: Basic data structures (lists), Functions, Problem-solving (iteration, conditional).
     """
     # TODO: Implement this function
-    pass
+    count = 0
+    for item in data_list:
+        if item == value_to_count:
+            count += 1
+
+    return count
 
 
 def create_student_record(name: str, student_id: str or int, courses: list) -> dict:
@@ -51,7 +59,7 @@ def create_student_record(name: str, student_id: str or int, courses: list) -> d
     Learning Outcomes: Basic data structures (dictionaries, lists), Functions.
     """
     # TODO: Implement this function
-    pass
+    return {"name": name, "id": student_id, "courses_enrolled": courses}
 
 
 def find_largest_number_in_list(numbers: list) -> int or float or None:
@@ -68,7 +76,8 @@ def find_largest_number_in_list(numbers: list) -> int or float or None:
     Learning Outcomes: Basic data structures (lists), Functions, Problem-solving (iteration, comparison).
     """
     # TODO: Implement this function
-    pass
+    if len( numbers ) == 0: return
+    return max( numbers )
 
 
 def combine_string_list(string_elements: list, joiner_char=" ") -> str:
@@ -87,4 +96,4 @@ def combine_string_list(string_elements: list, joiner_char=" ") -> str:
     Learning Outcomes: Basic data structures (lists of strings), Functions, Problem-solving (string operations).
     """
     # TODO: Implement this function
-    pass
+    return joiner_char.join( string_elements )
